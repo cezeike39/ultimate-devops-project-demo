@@ -23,3 +23,7 @@ jobs:
             cd src/ad
             chmod +x gradlew
             ./gradlew build
+    - name: download artifact
+      uses: actions/download-artifact@v3
+      with:
+        name: ad-build
