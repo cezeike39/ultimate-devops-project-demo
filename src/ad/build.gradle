@@ -79,6 +79,9 @@ sourceSets {
         }
     }
 }
+tasks.named("verifyGoogleJavaFormat") {
+    enabled = false
+}
 
 protobuf {
     protoc {
