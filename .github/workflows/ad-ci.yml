@@ -27,5 +27,6 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: ad-build
+        path: src/ad/build
         
  
