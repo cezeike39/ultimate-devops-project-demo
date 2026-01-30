@@ -20,6 +20,6 @@ jobs:
  
     - name: Build with Gradle Wrapper
       run: |
-            chmod +x gradlew
             cd src/ad
+            chmod +x gradlew
             ./gradlew build
