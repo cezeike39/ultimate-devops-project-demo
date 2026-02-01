@@ -55,6 +55,17 @@ jobs:
           file: src/ad/Dockerfile
           push: true
           tags: ${{ vars.DOCKERHUB_USERNAME }}/docker:${{github.run_id}}
-    
+
+  update-k8s:
+    needs: docker
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v5
+      - name: Update k8s image tag
+        run: |
+         sed -i.bak "s|image:*|${{ vars.DOCKERHUB_USERNAME }}/docker:${{github.run_id}}
+         |g" kubernetes/ad/deploy.yaml
+
         
  
